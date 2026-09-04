@@ -91,8 +91,8 @@ EOF
     cat > ~/.config/systemd/user/winapps-launcher.service <<EOF
     [Unit]
     Description=Run 'WinApps Launcher'
-    After=graphical-session.target default.target
-    Wants=graphical-session.target
+    PartOf=graphical-session.target
+    After=graphical-session.target
 
     [Service]
     Type=simple
@@ -108,7 +108,7 @@ EOF
     RestartSec=5
 
     [Install]
-    WantedBy=default.target
+    WantedBy=graphical-session.target
     EOF
     ```
 
